@@ -3,9 +3,9 @@ import Sidebar from "./_components/sidebar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex items-center w-full h-screen">
+    <div className="flex items-start w-full h-screen">
       <Sidebar />
-      {children}
+      <div className=" ml-[70px] md:ml-[250px]">{children}</div>
     </div>
   );
 };

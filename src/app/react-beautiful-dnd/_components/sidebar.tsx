@@ -60,7 +60,7 @@ const Sidebar = () => {
     },
   ];
   return (
-    <div className="w-[70px] md:w-[250px] flex flex-col gap-2 relative h-full border-r bg-white ">
+    <div className="fixed left-0 w-[70px] md:w-[250px] flex flex-col gap-2  h-full border-r bg-white ">
       <div className="hidden md:flex absolute top-0 left-0 inset-y-0 text-red-500 text-2xl m-2 font-bold">
         Boardify
       </div>
