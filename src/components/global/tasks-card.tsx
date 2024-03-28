@@ -11,10 +11,15 @@ import {
 } from "@/components/ui/card";
 import { PlusCircledIcon, TrashIcon } from "@radix-ui/react-icons";
 
-const TaskCard = ({ task }: { task: Task }) => {
+const TaskCard = ({ task, provided }: { task: Task; provided: any }) => {
   return (
-    <div className="relative  border h-[450px]">
-      <Card className="w-[300px]  ">
+    <div
+      ref={provided.innerRef}
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}
+      className="relative w-full "
+    >
+      <Card className="  ">
         <CardContent className="flex items-center flex-col w-full p-1 overflow-auto max-h-[400px]">
           <div className="my-2 bg-slate-300 rounded-md text-md w-full p-2">
             {task.description}

@@ -5,5 +5,5 @@ export interface Task {
 
 export interface TaskContainer {
   tasks: Task[];
-  title: string;
+  name: string;
 }
