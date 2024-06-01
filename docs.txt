@@ -2,3 +2,7 @@
 - Dnd-Kit 
 - native js-tailwind
 - react-beautiful-dnd
+
+# I will focus on dnd-kit 
+
+>> npm install @dnd-kit/core , @dnd-kit/sortable(optional)

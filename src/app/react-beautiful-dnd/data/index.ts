@@ -1,14 +1,14 @@
 import { v4 as uuidv4 } from "uuid";
 
 export type TaskT = {
-  id: string;
+  id: number | string;
   title: string;
-  description: string;
-  priority: string;
-  deadline: number;
-  image?: string;
-  alt?: string;
-  tags: { title: string; bg: string; text: string }[];
+  priority: number | string;
+  //   description: string;
+  //   deadline: number;
+  //   image?: string;
+  //   alt?: string;
+  //   tags: { title: string; bg: string; text: string }[];
 };
 
 type Column = {
@@ -16,145 +16,69 @@ type Column = {
   items: TaskT[];
 };
 
-export type Columns = {
-  [key: string]: Column;
-};
+// export type Columns = {
+//   [key: string]: Column;
+// };
 
-interface Color {
-  bg: string;
-  text: string;
-}
-
-const colors: { [key: string]: Color } = {
-  red: { bg: "#fee2e2", text: "#dc2626" },
-  rose: { bg: "#ffe4e6", text: "#e11d48" },
-  blue: { bg: "#dbeafe", text: "#2563eb" },
-  green: { bg: "#d1fae5", text: "#059669" },
-  indigo: { bg: "#e0e7ff", text: "#4f46e5" },
-  cyan: { bg: "#cffafe", text: "#0891b2" },
-  lime: { bg: "#ecfccb", text: "#65a30d" },
-  amber: { bg: "#fef3c7", text: "#d97706" },
-};
-
-export const getRandomColors = (): Color => {
-  const keys = Object.keys(colors);
-  const randomKey = keys[Math.floor(Math.random() * keys.length)];
-  return colors[randomKey];
-};
-
-export const Board: Columns = {
-  backlog: {
+export const BoardData: Column[] = [
+  {
     name: "Backlog",
     items: [
       {
-        id: uuidv4(),
-        title: "Admin Panel Front-end",
-        description: "Lorem ipsum dolor sit amet ..",
-        priority: "medium",
-        deadline: 50,
-        alt: "task image",
-        tags: [
-          { title: "Test", ...getRandomColors() },
-          { title: "Front", ...getRandomColors() },
-        ],
+        id: 1,
+        priority: 0,
+        title: "Company website redesign.",
       },
       {
-        id: uuidv4(),
-        title: "Admin Panel Back-end",
-        description: "Lorem ipsum dolor sit amet ..",
-        priority: "low",
-        deadline: 50,
-        tags: [
-          { title: "Test", ...getRandomColors() },
-          { title: "Front", ...getRandomColors() },
-        ],
+        id: 2,
+        priority: 2,
+        title: "Mobile app login process prototype.",
       },
     ],
   },
-  pending: {
-    name: "Pending",
+  {
+    name: "In Progress",
     items: [
       {
-        id: uuidv4(),
-        title: "Admin Panel Back-end",
-        description: "Lorem ipsum dolor sit amet ..",
-        priority: "high",
-        deadline: 50,
-        tags: [
-          { title: "Test", ...getRandomColors() },
-          { title: "Front", ...getRandomColors() },
-        ],
-      },
-      {
-        id: uuidv4(),
-        title: "Admin Panel Front-end",
-        description: "Lorem ipsum dolor sit amet ..",
-        priority: "low",
-        deadline: 50,
-        tags: [
-          { title: "Test", ...getRandomColors() },
-          { title: "Front", ...getRandomColors() },
-        ],
+        id: 3,
+        priority: 1,
+        title: "Research and strategy for upcoming project.",
       },
     ],
   },
-  todo: {
-    name: "To Do",
+  {
+    name: "In Review",
     items: [
       {
-        id: uuidv4(),
-        title: "Admin Panel Front-end",
-        description: "Lorem ipsum dolor sit amet ..",
-        priority: "medium",
-        deadline: 50,
-        tags: [
-          { title: "Test", ...getRandomColors() },
-          { title: "Front", ...getRandomColors() },
-        ],
+        id: 4,
+        priority: 2,
+        title: "Dashboard layout redesign.",
+      },
+      {
+        id: 5,
+        priority: 0,
+        title: "Social media posts",
       },
     ],
   },
-  doing: {
-    name: "Doing",
+  {
+    name: "Completed",
     items: [
       {
-        id: uuidv4(),
-        title: "Admin Panel Front-end",
-        description: "Lorem ipsum dolor sit amet ..",
-        priority: "low",
-        deadline: 50,
-        tags: [
-          { title: "Test", ...getRandomColors() },
-          { title: "Front", ...getRandomColors() },
-        ],
+        id: 6,
+        priority: 0,
+        title: "Review client spec document and give feedback.",
       },
       {
-        id: uuidv4(),
-        title: "Admin Panel Back-end",
-        description: "Lorem ipsum dolor sit amet ..",
-        priority: "medium",
-        deadline: 50,
-        tags: [
-          { title: "Test", ...getRandomColors() },
-          { title: "Front", ...getRandomColors() },
-        ],
+        id: 7,
+        priority: 1,
+        title: "Navigation designs",
+      },
+      {
+        id: 8,
+        priority: 2,
+        title: "Create style guide based on previous feedback",
       },
     ],
   },
-  done: {
-    name: "Done",
-    items: [
-      {
-        id: uuidv4(),
-        title: "Admin Panel Front-end",
-        description: "Lorem ipsum dolor sit amet ..",
-        priority: "high",
-        deadline: 50,
-        tags: [
-          { title: "Test", ...getRandomColors() },
-          { title: "Front", ...getRandomColors() },
-        ],
-      },
-    ],
-  },
-};
+];
